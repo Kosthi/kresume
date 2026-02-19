@@ -1,7 +1,7 @@
 // ===== 主题色 =====
 #let primary = rgb("#2B5EA7")    // 深蓝 - 姓名、section 标题
 #let accent = rgb("#3A7BD5")     // 亮蓝 - 链接、项目标题
-#let subtle = rgb("#64748B")     // 灰蓝 - 日期、次要信息
+#let subtle = rgb("#475569")     // 灰蓝 - 日期、次要信息
 
 // 页面设置
 #set page(
@@ -57,6 +57,13 @@
 
 // ===== 简历正文 =====
 
+// 照片定位到右上角
+#place(top + right, dy: -0.5cm, box(
+  clip: true,
+  radius: 4pt,
+  image("my.jpg", width: 2.4cm, height: 3.2cm),
+))
+
 // 姓名
 #align(center, text(font: ("Inter", "PingFang SC"), size: 22pt, weight: "bold", fill: primary)[吴奕民])
 
@@ -90,13 +97,13 @@ GPA: 3.4/4.0（专业前 10%）
 #section-title(emoji.trophy, [竞赛获奖])
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1fr, 1.15fr),
   column-gutter: 1.5em,
   row-gutter: 0.4em,
   [- 2023年美国大学生数学建模竞赛 *国际一等奖*],
+  [- 第四届OceanBase 数据库大赛 *全国二等奖*（3/1212）],
   [- 2024年全国大学生信息安全竞赛 *国家二等奖*],
-  [- 2024年OceanBase数据库大赛 *全国二等奖*],
-  [- 2024年计算机系统能力大赛 *全国一等奖*（2/325）],
+  [- 2024年计算机系统能力大赛-数据库赛道 *全国一等奖*（2/325）],
 )
 
 // ===== 发表论文 =====
@@ -114,7 +121,7 @@ GPA: 3.4/4.0（专业前 10%）
 
 // ===== 项目经历 =====
 
-#section-title(emoji.rocket, [项目经历])
+#section-title(emoji.star, [项目经历])
 
 #resume-item(
   [斯坦福 CS336 大语言模型入门],
@@ -127,8 +134,8 @@ GPA: 3.4/4.0（专业前 10%）
 - 实现大模型对齐技术，包括 *SFT* 监督微调、*DPO* 直接偏好优化与 *GRPO* 群体相对策略优化，完成奖励归一化、策略梯度损失计算与 clip 损失等核心算法。
 
 #resume-item(
-  [OpenACE 代码上下文检索引擎],
-  subtitle: [独立开发 | #resume-url("https://github.com/Kosthi/OpenACE")[GitHub]],
+  [OpenACE 代码上下文检索增强引擎],
+  subtitle: [#resume-url("https://github.com/Kosthi/OpenACE")[GitHub]],
   date: [2025.02—至今],
 )
 
